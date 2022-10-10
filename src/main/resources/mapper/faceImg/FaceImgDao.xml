@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.user.faceImg.dao.FaceImgDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.demo.user.faceImg.entity.FaceImgEntity" id="faceImgMap">
+        <result property="id" column="id"/>
+        <result property="imgData" column="img_data"/>
+        <result property="width" column="width"/>
+        <result property="height" column="height"/>
+        <result property="channel" column="channel"/>
+    </resultMap>
+
+    <delete id="clearImg">
+        delete from face_img
+    </delete>
+
+    <select id="findFaceImgs" resultType="com.example.demo.user.faceImg.entity.FaceImgEntity">
+        select
+               `id`,
+               `img_data` imgData,
+               width,
+               height,
+               channel
+        from face_img
+        limit 0, 100
+    </select>
+</mapper>

@@ -1,0 +1,28 @@
+server:
+  port: 2655
+  servlet:
+    session:
+      timeout: 120
+
+spring:
+  profiles:
+    active: dev
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.demo.user.modules.*.entity
+  global-config:
+    #驼峰下划线转换
+    db-column-underline: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+# 指定mybatisplus包名下的日志级别为debug
+logging:
+  level:
+    com.baomidou.mybatisplus: DEBUG
+
+    #项目mapper目录
+    com.example.demo.user: DEBUG

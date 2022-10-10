@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.user.common.dict.dao.TDictDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.demo.user.common.dict.entity.TDictEntity" id="tDictMap">
+        <result property="dicId" column="dic_id"/>
+        <result property="dicCode" column="dic_code"/>
+        <result property="dicValue" column="dic_value"/>
+        <result property="dicName" column="dic_name"/>
+        <result property="yxbz" column="yxbz"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="getDictByDictCode" resultMap="tDictMap">
+        select * from t_dict where yxbz = '1' and dic_code = #{dicCode}
+    </select>
+
+    <select id="getDictByDictCodeDic" resultMap="tDictMap">
+        select * from t_dict where yxbz = '1' and dic_code = #{dicCode} and dic_value = #{dicValue}
+    </select>
+
+</mapper>

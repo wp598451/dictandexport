@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.user.modules.student.dao.TStudentDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.demo.user.modules.student.entity.TStudentEntity" id="tStudentMap">
+        <result property="sid" column="sid"/>
+        <result property="sname" column="sname"/>
+        <result property="sage" column="sage"/>
+        <result property="ssex" column="ssex"/>
+        <result property="sphone" column="sphone"/>
+        <result property="yxbz" column="yxbz"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="queryList" resultMap="tStudentMap">
+        select * from t_student
+        where 1 = 1
+
+        <if test="sName != null and sName != '' ">
+            and s_name like concat('%', #{sName}, '%')
+        </if>
+
+        <if test="sage != null and sage != '' ">
+            and sage = #{sage}
+        </if>
+
+        <if test="ssex != null and ssex != '' ">
+            and ssex = #{ssex}
+        </if>
+
+        <if test="sphone != null and sphone != '' ">
+            and sphone like concat('%', #{sphone}, '%')
+        </if>
+    </select>
+
+
+</mapper>

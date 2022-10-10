@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="ibox-content">
+    <form th:action="@{/add_picture_post}" enctype="multipart/form-data" method="post">
+        <label class="font-bold">选择二进制存储文件</label>
+        <input type="file" class="form-control" name="binPto" style="width: 285px;margin: 0 auto"> <br/>
+        <label class="font-bold">选择base64存储文件</label>
+        <input type="file" class="form-control" name="base64Pto" style="width: 285px;margin: 0 auto"><br/>
+        <button class="btn btn-primary" type="submit">
+            <strong>提交</strong>
+        </button>
+    </form>
+</div>
+</body>
+</html>

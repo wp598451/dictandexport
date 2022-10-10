@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.user.faceIndex.dao.FaceIndexDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.example.demo.user.faceIndex.entity.FaceIndexEntity" id="faceIndexMap">
+        <result property="idIndex" column="id_index"/>
+        <result property="id" column="id"/>
+    </resultMap>
+
+    <select id="findKeyByIndex" resultType="java.lang.String">
+        select `id` from face_index where index = #{index}
+    </select>
+
+    <select id="findIndexes" resultType="java.lang.Long">
+        select index from face_index where `id` in #{keys}
+    </select>
+
+    <delete id="clearIndex">
+        delete from face_index
+    </delete>
+
+    <select id="getUserFaces" resultType="com.example.demo.user.userfaceinfo.entity.EclassUserFaceInfoEntity">
+        select face_id faceId, face_feature faceFeature,user_id userId, school_id schoolId, group_id groupId,
+               id_num idNum, image_path imagePath from eclass_user_face_info
+    </select>
+</mapper>
