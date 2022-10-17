@@ -19,20 +19,6 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 
-myprops:
-  image-url: src/main/resources/static/images/
-  image-target-url: src/main/resources/static/images/
-  suffix: .jpg
-
-config:
-  arcface-sdk:
-    version: 3.0
-    app-id: CK6omq6Sqb41yVhvLFvQTUvU1CHiUukbHq6qEzy9br8e
-    sdk-key: 8XQPvCqiksepuH9ZD2EcwWheXp5inkh3L5vF9kCSxp5L
-    active_key:  #免费版不填
-    detect-pool-size: 5
-    compare-pool-size: 5
-
 # 指定mybatisplus包名下的日志级别为debug
 logging:
   level:
