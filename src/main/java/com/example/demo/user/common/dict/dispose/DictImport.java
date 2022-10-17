@@ -50,7 +50,7 @@ public class DictImport implements IImportFactory<TDictEntity> {
         List<String> dataList = new ArrayList<>();
         List<String> dicMcList = new ArrayList<>();
         CheckVo checkVo = new CheckVo();
-        checkVo.setCellStyle(cellStyle).setDicMc(dicMcList);
+//        checkVo.setCellStyle(cellStyle).setDicMc(dicMcList);
         checkData(s, allNums, checkVo, dataList, flag, zhqSzkbjcblgls, rowIndex);
     }
 
@@ -68,13 +68,10 @@ public class DictImport implements IImportFactory<TDictEntity> {
 
     @Override
     public void create(Sheet s, int i, CheckVo checkVo, List<String> dataList, int flag, List<TDictEntity> list) {
-        CheckVo checkVo1 = BeanUtil.toBean(checkVo, CheckVo.class);
         //定义错误信息msg
         StringBuilder errorMsg = new StringBuilder();
-        checkVo1.setErrmsg(errorMsg).setDataList(dataList);
         Row r = s.getRow(i);
         TDictEntity dictEntity = new TDictEntity();
-        checkVo1.setRow(r);
 
         // 字典代码
         String dicCode = DATAFORMATTER.formatCellValue(r.getCell(1));

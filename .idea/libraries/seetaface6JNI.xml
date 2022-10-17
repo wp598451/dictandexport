@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="seetaface6JNI">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/seetaface6JNI.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

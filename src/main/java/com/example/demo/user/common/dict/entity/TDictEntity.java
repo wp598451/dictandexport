@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 import lombok.experimental.Accessors;
 
 /**
@@ -15,7 +14,6 @@ import lombok.experimental.Accessors;
  * @email ping.wang@nuggetdata.com
  * @date 2022-08-12 15:28:23
  */
-@Data
 @Accessors(chain = true)
 @TableName("t_dict")
 public class TDictEntity implements Serializable {
@@ -59,4 +57,75 @@ public class TDictEntity implements Serializable {
 	 */
 	private Date updateTime;
 
+	public String getDicId() {
+		return dicId;
+	}
+
+	public void setDicId(String dicId) {
+		this.dicId = dicId;
+	}
+
+	public String getDicCode() {
+		return dicCode;
+	}
+
+	public void setDicCode(String dicCode) {
+		this.dicCode = dicCode;
+	}
+
+	public String getDicValue() {
+		return dicValue;
+	}
+
+	public void setDicValue(String dicValue) {
+		this.dicValue = dicValue;
+	}
+
+	public String getDicName() {
+		return dicName;
+	}
+
+	public void setDicName(String dicName) {
+		this.dicName = dicName;
+	}
+
+	public String getYxbz() {
+		return yxbz;
+	}
+
+	public void setYxbz(String yxbz) {
+		this.yxbz = yxbz;
+	}
+
+	public String getCreateBy() {
+		return createBy;
+	}
+
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getUpdateBy() {
+		return updateBy;
+	}
+
+	public void setUpdateBy(String updateBy) {
+		this.updateBy = updateBy;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
 }
